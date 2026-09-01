@@ -5,10 +5,11 @@ import {
   StyleSheet,
   Animated,
   StatusBar,
+  Pressable,
 } from 'react-native';
 import colors from '../constants/colors';
 
-const SplashScreen = () => {
+const SplashScreen = ({ onPress }) => {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.8)).current;
 
@@ -29,7 +30,7 @@ const SplashScreen = () => {
   }, [fadeAnim, scaleAnim]);
 
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container} onPress={onPress}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
       {/* Pastel blob - góc trên bên phải */}
@@ -60,7 +61,7 @@ const SplashScreen = () => {
           resizeMode="contain"
         />
       </Animated.View>
-    </View>
+    </Pressable>
   );
 };
 
