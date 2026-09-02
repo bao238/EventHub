@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import * as ExpoSplashScreen from 'expo-splash-screen';
 import SplashScreen from './src/screens/SplashScreen';
 import Onboarding2Screen from './src/screens/Onboarding2Screen';
+import Onboarding3Screen from './src/screens/Onboarding3Screen';
 
 // Giữ native splash screen cho đến khi app sẵn sàng
 ExpoSplashScreen.preventAutoHideAsync();
@@ -20,7 +21,10 @@ export default function App() {
         <SplashScreen onPress={() => setCurrentScreen('onboarding2')} />
       )}
       {currentScreen === 'onboarding2' && (
-        <Onboarding2Screen />
+        <Onboarding2Screen onNext={() => setCurrentScreen('onboarding3')} />
+      )}
+      {currentScreen === 'onboarding3' && (
+        <Onboarding3Screen />
       )}
     </View>
   );
