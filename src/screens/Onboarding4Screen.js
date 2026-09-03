@@ -15,15 +15,15 @@ const { width: SCREEN_WIDTH } = Dimensions.get('window');
 // Scale factor dựa trên design width 375px
 const scale = SCREEN_WIDTH / 375;
 
-const Onboarding3Screen = ({ onNext }) => {
+const Onboarding4Screen = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
-      {/* Hình minh họa - preview Calendar */}
+      {/* Hình minh họa - preview Map */}
       <View style={styles.illustrationContainer}>
         <Image
-          source={require('../../assets/images/onboarding3.png')}
+          source={require('../../assets/images/onboarding4.png')}
           style={styles.illustration}
           resizeMode="contain"
         />
@@ -33,7 +33,7 @@ const Onboarding3Screen = ({ onNext }) => {
       <View style={styles.bottomSection}>
         {/* Tiêu đề */}
         <Text style={styles.title}>
-          Web Have Modern Events{'\n'}Calendar Feature
+          To Look Up More Events or{'\n'}Activities Nearby By Map
         </Text>
 
         {/* Mô tả */}
@@ -48,15 +48,15 @@ const Onboarding3Screen = ({ onNext }) => {
             <Text style={styles.skipText}>Skip</Text>
           </TouchableOpacity>
 
-          {/* Dot indicators - dot 2 active */}
+          {/* Dot indicators - dot 3 active */}
           <View style={styles.dotsContainer}>
             <View style={styles.dot} />
-            <View style={[styles.dot, styles.dotActive]} />
             <View style={styles.dot} />
+            <View style={[styles.dot, styles.dotActive]} />
           </View>
 
           {/* Next */}
-          <TouchableOpacity style={styles.nextButton} onPress={onNext}>
+          <TouchableOpacity style={styles.nextButton}>
             <Text style={styles.nextText}>Next</Text>
           </TouchableOpacity>
         </View>
@@ -166,4 +166,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Onboarding3Screen;
+export default Onboarding4Screen;

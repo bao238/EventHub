@@ -4,6 +4,7 @@ import * as ExpoSplashScreen from 'expo-splash-screen';
 import SplashScreen from './src/screens/SplashScreen';
 import Onboarding2Screen from './src/screens/Onboarding2Screen';
 import Onboarding3Screen from './src/screens/Onboarding3Screen';
+import Onboarding4Screen from './src/screens/Onboarding4Screen';
 
 // Giữ native splash screen cho đến khi app sẵn sàng
 ExpoSplashScreen.preventAutoHideAsync();
@@ -24,7 +25,10 @@ export default function App() {
         <Onboarding2Screen onNext={() => setCurrentScreen('onboarding3')} />
       )}
       {currentScreen === 'onboarding3' && (
-        <Onboarding3Screen />
+        <Onboarding3Screen onNext={() => setCurrentScreen('onboarding4')} />
+      )}
+      {currentScreen === 'onboarding4' && (
+        <Onboarding4Screen />
       )}
     </View>
   );
