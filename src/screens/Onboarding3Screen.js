@@ -15,7 +15,7 @@ const { width: SCREEN_WIDTH } = Dimensions.get('window');
 // Scale factor dựa trên design width 375px
 const scale = SCREEN_WIDTH / 375;
 
-const Onboarding3Screen = ({ onNext }) => {
+const Onboarding3Screen = ({ onNext, onSkip }) => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
@@ -44,7 +44,7 @@ const Onboarding3Screen = ({ onNext }) => {
         {/* Navigation row: Skip - Dots - Next */}
         <View style={styles.navigationRow}>
           {/* Skip */}
-          <TouchableOpacity style={styles.skipButton}>
+          <TouchableOpacity style={styles.skipButton} onPress={onSkip}>
             <Text style={styles.skipText}>Skip</Text>
           </TouchableOpacity>
 
