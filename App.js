@@ -6,6 +6,7 @@ import Onboarding2Screen from './src/screens/Onboarding2Screen';
 import Onboarding3Screen from './src/screens/Onboarding3Screen';
 import Onboarding4Screen from './src/screens/Onboarding4Screen';
 import SignInScreen from './src/screens/SignInScreen';
+import SignUpScreen from './src/screens/SignUpScreen';
 
 // Giữ native splash screen cho đến khi app sẵn sàng
 ExpoSplashScreen.preventAutoHideAsync();
@@ -14,6 +15,7 @@ export default function App() {
   const [currentScreen, setCurrentScreen] = useState('splash');
 
   const goToSignIn = () => setCurrentScreen('signin');
+  const goToSignUp = () => setCurrentScreen('signup');
 
   const onLayoutRootView = useCallback(async () => {
     await ExpoSplashScreen.hideAsync();
@@ -43,7 +45,10 @@ export default function App() {
         />
       )}
       {currentScreen === 'signin' && (
-        <SignInScreen />
+        <SignInScreen onSignUp={goToSignUp} />
+      )}
+      {currentScreen === 'signup' && (
+        <SignUpScreen onBack={goToSignIn} />
       )}
     </View>
   );
