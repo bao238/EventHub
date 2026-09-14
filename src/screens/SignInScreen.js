@@ -19,7 +19,7 @@ import colors from '../constants/colors';
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const scale = SCREEN_WIDTH / 375;
 
-const SignInScreen = ({ onSignUp }) => {
+const SignInScreen = ({ onSignUp, onForgotPassword }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(true);
@@ -39,7 +39,7 @@ const SignInScreen = ({ onSignUp }) => {
         {/* Logo */}
         <View style={styles.logoContainer}>
           <Image
-            source={require('../../assets/images/logo-signin.png')}
+            source={require('../../assets/images/common/logo-signin.png')}
             style={styles.logo}
             resizeMode="contain"
           />
@@ -90,7 +90,7 @@ const SignInScreen = ({ onSignUp }) => {
             />
             <Text style={styles.rememberText}>Remember Me</Text>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onForgotPassword}>
             <Text style={styles.forgotText}>Forgot Password?</Text>
           </TouchableOpacity>
         </View>
@@ -108,13 +108,13 @@ const SignInScreen = ({ onSignUp }) => {
 
         {/* Login with Google */}
         <TouchableOpacity style={styles.socialButton}>
-          <Image source={require('../../assets/images/icon-google.png')} style={styles.socialIcon} resizeMode="contain" />
+          <Image source={require('../../assets/images/common/icon-google.png')} style={styles.socialIcon} resizeMode="contain" />
           <Text style={styles.socialText}>Login with Google</Text>
-        </TouchableOpacity> 
+        </TouchableOpacity>
 
         {/* Login with Facebook */}
         <TouchableOpacity style={styles.socialButton}>
-          <Image source={require('../../assets/images/icon-facebook.png')} style={styles.socialIcon} resizeMode="contain" />
+          <Image source={require('../../assets/images/common/icon-facebook.png')} style={styles.socialIcon} resizeMode="contain" />
           <Text style={styles.socialText}>Login with Facebook</Text>
         </TouchableOpacity>
 

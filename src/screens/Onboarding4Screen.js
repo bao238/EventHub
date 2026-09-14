@@ -23,7 +23,7 @@ const Onboarding4Screen = ({ onNext, onSkip }) => {
       {/* Hình minh họa - preview Map */}
       <View style={styles.illustrationContainer}>
         <Image
-          source={require('../../assets/images/onboarding4.png')}
+          source={require('../../assets/images/screen4_onboarding/onboarding4.png')}
           style={styles.illustration}
           resizeMode="contain"
         />

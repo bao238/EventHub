@@ -23,7 +23,7 @@ const Onboarding2Screen = ({ onNext, onSkip }) => {
       {/* Hình minh họa - preview app */}
       <View style={styles.illustrationContainer}>
         <Image
-          source={require('../../assets/images/onboarding2.png')}
+          source={require('../../assets/images/screen2_onboarding/onboarding2.png')}
           style={styles.illustration}
           resizeMode="contain"
         />

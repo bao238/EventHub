@@ -23,7 +23,7 @@ const Onboarding3Screen = ({ onNext, onSkip }) => {
       {/* Hình minh họa - preview Calendar */}
       <View style={styles.illustrationContainer}>
         <Image
-          source={require('../../assets/images/onboarding3.png')}
+          source={require('../../assets/images/screen3_onboarding/onboarding3.png')}
           style={styles.illustration}
           resizeMode="contain"
         />

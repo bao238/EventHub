@@ -56,7 +56,7 @@ const SplashScreen = ({ onPress }) => {
         ]}
       >
         <Image
-          source={require('../../assets/images/logo.png')}
+          source={require('../../assets/images/common/logo.png')}
           style={styles.logo}
           resizeMode="contain"
         />

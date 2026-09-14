@@ -116,13 +116,13 @@ const SignUpScreen = ({ onBack }) => {
 
         {/* Login with Google */}
         <TouchableOpacity style={styles.socialButton}>
-          <Image source={require('../../assets/images/icon-google.png')} style={styles.socialIcon} resizeMode="contain" />
+          <Image source={require('../../assets/images/common/icon-google.png')} style={styles.socialIcon} resizeMode="contain" />
           <Text style={styles.socialText}>Login with Google</Text>
         </TouchableOpacity>
 
         {/* Login with Facebook */}
         <TouchableOpacity style={styles.socialButton}>
-          <Image source={require('../../assets/images/icon-facebook.png')} style={styles.socialIcon} resizeMode="contain" />
+          <Image source={require('../../assets/images/common/icon-facebook.png')} style={styles.socialIcon} resizeMode="contain" />
           <Text style={styles.socialText}>Login with Facebook</Text>
         </TouchableOpacity>
 
