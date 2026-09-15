@@ -19,7 +19,7 @@ import colors from '../constants/colors';
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const scale = SCREEN_WIDTH / 375;
 
-const SignInScreen = ({ onSignUp, onForgotPassword }) => {
+const SignInScreen = ({ onSignUp, onForgotPassword, onSignIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(true);
@@ -96,7 +96,7 @@ const SignInScreen = ({ onSignUp, onForgotPassword }) => {
         </View>
 
         {/* Sign In button */}
-        <TouchableOpacity style={styles.signInButton} activeOpacity={0.8}>
+        <TouchableOpacity style={styles.signInButton} activeOpacity={0.8} onPress={onSignIn}>
           <Text style={styles.signInText}>SIGN IN</Text>
           <View style={styles.arrowCircle}>
             <Feather name="arrow-right" size={20} color={colors.textLight} />

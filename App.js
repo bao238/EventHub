@@ -9,6 +9,7 @@ import SignInScreen from './src/screens/SignInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
 import VerificationScreen from './src/screens/VerificationScreen';
+import HomeScreen from './src/screens/HomeScreen';
 
 // Giữ native splash screen cho đến khi app sẵn sàng
 ExpoSplashScreen.preventAutoHideAsync();
@@ -21,6 +22,7 @@ export default function App() {
   const goToSignUp = () => setCurrentScreen('signup');
   const goToResetPassword = () => setCurrentScreen('resetpassword');
   const goToVerification = () => setCurrentScreen('verification');
+  const goToHome = () => setCurrentScreen('home');
 
   const onLayoutRootView = useCallback(async () => {
     await ExpoSplashScreen.hideAsync();
@@ -53,6 +55,7 @@ export default function App() {
         <SignInScreen
           onSignUp={goToSignUp}
           onForgotPassword={goToResetPassword}
+          onSignIn={goToHome}
         />
       )}
       {currentScreen === 'signup' && (
@@ -71,8 +74,11 @@ export default function App() {
         <VerificationScreen
           email={resetEmail}
           onBack={goToResetPassword}
-          onContinue={goToSignIn}
+          onContinue={goToHome}
         />
+      )}
+      {currentScreen === 'home' && (
+        <HomeScreen onSignOut={goToSignIn} />
       )}
     </View>
   );
